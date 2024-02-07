@@ -1,20 +1,26 @@
-//
-//  ContentView.swift
-//  Memorize
-//
-//  Created by iris he on 2024-02-02.
-//
-
 import SwiftUI
-
-struct ContentView: View {
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
+struct ContentView: View{
+    var body: Text{
+        Text("hello")
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct CardView: View{
+    var isFaceUo : Bool = false
+    var body : some View{
+        ZStack(content:{
+            if isFaceUo{
+                RoundedRectangle(cornerRadius: 12).foregroundColor(.white)
+                RoundedRectangle(cornerRadius: 12).strokeBorder(lineWidth: 2)
+                Text("😅").font(.largeTitle)
+            }else{
+                RoundedRectangle(cornerRadius: 12)
+            }
+        })
+    }
+}
+
+struct Previews_ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
